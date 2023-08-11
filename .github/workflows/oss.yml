@@ -15,7 +15,7 @@ jobs:
       - name: 安装Node
         uses: actions/setup-node@v3
         with:
-          node-version: "16"
+          node-version: "18"
 
       - name: 构建HTML
         run: |
@@ -23,7 +23,7 @@ jobs:
           npm run build
 
       - name: 连接OSS
-        uses: manyuanrong/setup-ossutil@v2.0
+        uses: manyuanrong/setup-ossutil@v3.0
         with:
           # 地域节点，在控制台查看
           endpoint: oss-cn-hongkong.aliyuncs.com
