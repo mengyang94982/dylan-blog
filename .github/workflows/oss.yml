@@ -32,4 +32,4 @@ jobs:
           access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
 
       - name: 发布到OSS
-        run: ossutil cp -rf docs/.vuepress/dist/ oss://vitepress-blog
+        run: ossutil cp -rf docs/.vitepress/dist/ oss://vitepress-blog
