@@ -29,7 +29,7 @@ jobs:
           endpoint: oss-cn-hongkong.aliyuncs.com
           # 刚刚创建的id和secret
           access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
-          access-key-secret: ${{ secrets.  }}
+          access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
 
       - name: 发布到OSS
         run: ossutil cp -rf docs/.vuepress/dist/ oss://vitepress-blog
