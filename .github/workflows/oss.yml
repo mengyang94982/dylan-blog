@@ -3,19 +3,19 @@ name: Ali OSS
 on:
   push:
     branches:
-      - oss
+      - master
 jobs:
   deploy:
     name: 部署到阿里云对象存储
     runs-on: ubuntu-latest
     steps:
-      - name: 更新代码
+      - name: 更新代码/获取源码
         uses: actions/checkout@master
 
       - name: 安装Node
         uses: actions/setup-node@v1
         with:
-          node-version: "12.x"
+          node-version: "18.16.0"
 
       - name: 构建HTML
         run: |
@@ -29,7 +29,7 @@ jobs:
           endpoint: oss-cn-hongkong.aliyuncs.com
           # 刚刚创建的id和secret
           access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
-          access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+          access-key-secret: ${{ secrets.  }}
 
       - name: 发布到OSS
-        run: ossutil cp -rf docs/.vuepress/dist/ oss://xiaomucool-blog/
+        run: ossutil cp -rf docs/.vuepress/dist/ oss://vitepress-blog
